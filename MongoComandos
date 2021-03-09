@@ -1,0 +1,28 @@
+Comandos mongo
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+
+sudo systemctl enable mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+
+
+Para crear un nuevo usuario con acceso a todas las bases de datos y permisos de administrador
+
+db.createUser(
+{	user: "aeternam",
+	pwd: "Master.ae13",
+
+	roles:[{role: "userAdminAnyDatabase" , db:"admin"}]})
+
+Para crear una base de datos
+use <Database name>
+
+Pero no se termina de crear hasta que se inserte algo
+
+db.EURUSD.insert({Years: [], Entries: []})
+
+el db.EURUSD hace refencia a la collecion EURUSD en donde se guardara todo
+
+WriteResult({ "nInserted" : 1 })

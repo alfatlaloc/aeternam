@@ -1,0 +1,11 @@
+12 * 365 * 20 = 87,600   --- Por hora
+365 * 20 = 7300   --- Por dia
+52 * 20 = 1040   --- Por Semana
+12 * 20 = 240   --- Por mes
+20  --- Por año
+
+Total de registros:
+96,200
+
+
+Esto tomando en cuenta hasta horas, en mi opinion minutos seria demasiado por la cantidad de datos y nuestras computadoras no lo soportarian
