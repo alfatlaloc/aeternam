@@ -1,0 +1,57 @@
+GET http://localhost:8080/Usuario/5eb4d529895e7a3982b5bf8b
+
+###
+GET http://localhost:8080/
+###
+
+POST http://localhost:8080/Usuario/
+Content-Type: application/json
+
+{
+  "Nombre": "Mary",
+  "Correo": "mary@masterbeer.com",
+  "Contraseña": "elkks"
+}
+
+
+###
+http://localhost:8080/Botella/5ea393d4ea68035c0c9e6a45
+###
+GET http://192.168.1.123:8080/Botella/5ea393d4ea68035c0c9e6a45
+###
+
+GET http://localhost:8080/Usuario?Correo=mr.alfatlaloc@gmail.com
+###
+GET http://192.168.0.8:8080/Usuario?Correo=mr.alfatlaloc%40gmail.com
+###
+GET http://localhost:8080/Botella
+###
+POST http://localhost:8080/Botella
+Content-Type: application/json
+
+{
+        "Nombre": "Bud Light",
+        "Marca": "Anheuser Busch",
+        "Stock" : "3000",
+        "Precio" : "96",
+        "Desc": "American-style pale lager beer",
+        "Contenido_N": "355",
+        "Tipo": "Cerveza Obscura",
+        "Volumen_A": "4.2",
+        "volBP":"7"
+}
+
+###
+
+POST http://localhost:8080/Ingrediente
+Content-Type: application/json
+
+{
+        "Nombre": "Granadina",
+        "Volumen": "500",
+        "Stock" : "3000",
+        "Precio" : "96",
+        "Tipo": "LIQUIDO"
+}
+
+###
