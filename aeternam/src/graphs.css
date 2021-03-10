@@ -1,0 +1,12 @@
+.GGG {
+    flex: 1;
+    height: 100vh;
+    flex-basis: 50%;
+    width: 100vh;
+}
+
+#area {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
