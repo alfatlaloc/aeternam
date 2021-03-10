@@ -12,19 +12,26 @@ router.get("/", async(req, res) => {
     }
 });
 
-// Creating one
-router.post("/Years", async(req, res) => {
-    console.log("req" + req.body.Nombre);
-    const Extra = new ExtraM({
-        Nombre: req.body.Nombre,
-        Precio: req.body.Precio
+router.post("/", async(req, res) => {
+    console.log("req: " + req.body.Annual_Change);
+    const Year = new EURUSDModel({
+        keyName: req.body.keyName,
+        Date: req.body.Date,
+        High: req.body.High,
+        Low: req.body.Low,
+        Close: req.body.Close,
+        Open: req.body.Open,
+        Annual_Change: req.body.Annual_Change,
+        ACP: req.body.ACP
+
     });
     try {
-        const newExtra = await Extra.save();
-        res.status(201).json(newExtra);
+        const newYear = await Year.save();
+        res.status(201).json(newYear);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 });
+
 
 module.exports = router;

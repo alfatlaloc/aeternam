@@ -1,7 +1,29 @@
 GET http://localhost:8080/Usuario/5eb4d529895e7a3982b5bf8b
 
 ###
-GET http://localhost:8080/
+GET http://localhost:8080/Year
+
+###
+POST  http://localhost:8080/Year
+Content-Type: application/json
+
+{
+        "keyName":"1998",
+        "values": {"Date" :"02/02/1998","High":100,"Low":10,"Close":90,"Open":15}
+}
+
+###
+POST http://localhost:8080/Botella
+Content-Type: application/json
+{
+        "Entries":[
+                {"Date" :"31/12/1998","High":100,"Low":10,"Close":90,"Open":15}
+                {"Date" :"02/02/1997","High":100,"Low":10,"Close":90,"Open":15}
+
+
+        ]
+}
+
 ###
 
 POST http://localhost:8080/Usuario/

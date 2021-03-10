@@ -22,5 +22,5 @@ app.options("*", (req, res) => {
 
 app.listen(port, console.log("listening on port ", port));
 
-const EURUSD = require("./Routes/EURUSD");
-app.use("/EURUSD", EURUSD);
+const EURUSD = require("./Routes/Year");
+app.use("/Year", EURUSD);

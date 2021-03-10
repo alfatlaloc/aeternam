@@ -21,7 +21,7 @@ use <Database name>
 
 Pero no se termina de crear hasta que se inserte algo
 
-db.EURUSD.insert({Years: [], Entries: []})
+db.EURUSD.insert({Years: [], Months: []})
 
 el db.EURUSD hace refencia a la collecion EURUSD en donde se guardara todo
 
