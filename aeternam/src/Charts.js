@@ -19,7 +19,7 @@ function DrawChart() {
     auxArr[0]=RowNames;
     var i = 1;
     Data.forEach(item => {
-      auxArr[i++]= [item.keyname,item.High,item.Close,item.Open,item.Low];
+      auxArr[i++]= [item.keyName,item.High,item.Close,item.Open,item.Low];
     });
     console.log(auxArr);
     return auxArr;
