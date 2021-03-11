@@ -1,68 +1,63 @@
-import React from 'react';
+import React from "react";
 import Chart from "react-google-charts";
+import * as EURUSDApi from "./API/EURUSD";
+import { useEffect, useState } from "react";
 
 function DrawChart() {
-    return (
-        <div id="area">
-            <Chart
-                className="GGG"
-                chartType="CandlestickChart"
-                loader={<div> Loading Chart </div>}
-                data={
-                    [
-                        ['day', 'HIGH', 'CLOSE', 'OPEN', 'LOW'],
-                        ['Sun', 1.2101, 1.2077, 1.2074, 1.2071],
-                        ['Mon', 1.2051, 1.202, 1.2047, 1.2015],
-                        ['Tue', 1.2093, 1.2089, 1.2089, 1.2083],
-                        ['Wed', 1.2067, 1.2051, 1.2062, 1.2044],
-                        ['Thu', 1.1978, 1.1956, 1.1966, 1.1951],
-                        ['Fri', 1.1978, 1.1912, 1.1966, 1.1894],
+  const [Data, setData] = useState([]);
 
-                    ]
-                }
-                options={
-                    {
-                        legend: 'none',
-                    }
-                }
-                rootProps={
-                    { 'data-testid': '1' }
-                }
-            />
-            <Chart
-                className="GGG"
-                chartType="LineChart"
-                loader={<div> Loading Chart </div>}
-                data={
-                    [
-                        ['x', 'HIGH', 'LOW'],
-                        [0, 1.2101, 1.2071],
-                        [1, 1.2051, 1.2015],
-                        [2, 1.2093, 1.2083],
-                        [3, 1.2067, 1.2044],
-                        [4, 1.1978, 1.1951],
-                        [5, 1.1978, 1.1894],
-                    ]
-                }
-                options={
-                    {
-                        hAxis: {
-                            title: 'Time',
-                        },
-                        vAxis: {
-                            title: 'Price',
-                        },
-                        series: {
-                            1: { curveType: 'function' },
-                            0: { curveType: 'function' },
-                        },
-                    }
-                }
-                rootProps={
-                    { 'data-testid': '2' }
-                }
-            /> </div>
-    );
+  useEffect(() => {
+    if (Data.length === 0) {
+      EURUSDApi.getPerYear().then((Info) => {
+        setData(Info);
+      });
+    }
+  });
+
+  function toCandlestick(RowNames){
+    let auxArr = new Array();
+    auxArr[0]=RowNames;
+    var i = 1;
+    Data.forEach(item => {
+      auxArr[i++]= [item.keyname,item.High,item.Close,item.Open,item.Low];
+    });
+    console.log(auxArr);
+    return auxArr;
+  }
+
+  return (
+    <div id="area">
+      <Chart
+        className="GGG"
+        chartType="CandlestickChart"
+        loader={<div> Loading Chart </div>}
+        data={toCandlestick(['day', 'HIGH', 'CLOSE', 'OPEN', 'LOW'])}
+        options={{
+          legend: "none",
+        }}
+        rootProps={{ "data-testid": "1" }}
+      />{" "}
+      <Chart
+        className="GGG"
+        chartType="LineChart"
+        loader={<div> Loading Chart </div>}
+        data={toCandlestick(['day', 'HIGH', 'CLOSE', 'OPEN', 'LOW'])}
+        options={{
+          hAxis: {
+            title: "Time",
+          },
+          vAxis: {
+            title: "Price",
+          },
+          series: {
+            1: { curveType: "function" },
+            0: { curveType: "function" },
+          },
+        }}
+        rootProps={{ "data-testid": "2" }}
+      />
+    </div>
+  );
 }
 
 export default DrawChart;
