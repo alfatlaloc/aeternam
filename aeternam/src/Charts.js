@@ -15,7 +15,7 @@ function DrawChart() {
   });
 
   function toCandlestick(RowNames){
-    let auxArr = new Array();
+    let auxArr = [];
     auxArr[0]=RowNames;
     var i = 1;
     Data.forEach(item => {

@@ -1,7 +1,0 @@
-// .env file
-
-<<<<<<< HEAD
-REACT_APP_SERVER_URL= http://localhost:8080
-=======
-REACT_APP_SERVER_URL= http://localhost.5:8080
->>>>>>> 0e01eecddf8a0e23c090e9e68243f8c205351082

@@ -4,7 +4,10 @@ import json
 
 url = 'http://localhost:8080/Year'
 
-df = pd.read_csv('CSV/Year.csv')
+val = input("Enter CSV name: ") 
+print("Reading: CSV/"+val+".csv") 
+
+df = pd.read_csv('CSV/'+val+'.csv')
 
 print(df.head())
 
