@@ -33,11 +33,7 @@ const EURUSDMonth = new Schema({
         type: Number,
         required: true
     },
-    Annual_Change: {
-        type: Number,
-        required: true
-    },
-    ACP: {
+    Change: {
         type: Number,
         required: true
     }

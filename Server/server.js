@@ -24,3 +24,6 @@ app.listen(port, console.log("listening on port ", port));
 
 const EURUSD = require("./Routes/Year");
 app.use("/Year", EURUSD);
+
+const EURUSDM = require("./Routes/Month");
+app.use("/Month", EURUSDM);

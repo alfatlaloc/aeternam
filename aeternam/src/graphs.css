@@ -1,7 +1,7 @@
 .GGG {
     flex: 1;
     height: 100vh;
-    flex-basis: 50%;
+    flex-basis: 100%;
     width: 100vh;
 }
 
