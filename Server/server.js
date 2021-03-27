@@ -27,3 +27,6 @@ app.use("/Year", EURUSD);
 
 const EURUSDM = require("./Routes/Month");
 app.use("/Month", EURUSDM);
+
+const EURUSDW = require("./Routes/Week");
+app.use("/Week", EURUSDW);

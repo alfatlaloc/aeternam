@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-import { Data } from './Schema';
 
 mongoose.connect("mongodb://localhost:27017/aeternam", {
     useNewUrlParser: true,
@@ -9,7 +8,35 @@ mongoose.connect("mongodb://localhost:27017/aeternam", {
 
 
 const EURUSDWeek = new Schema({
-    Weeks: Data
+    keyName: {
+        type: Number,
+        required: true,
+    },
+    Date: {
+        type: Date,
+        required: true,
+        unique: true
+    },
+    High: {
+        type: Number,
+        required: true
+    },
+    Low: {
+        type: Number,
+        required: true
+    },
+    Close: {
+        type: Number,
+        required: true
+    },
+    Open: {
+        type: Number,
+        required: true
+    },
+    Change: {
+        type: Number,
+        required: true
+    }
 });
 
 module.exports = mongoose.model("EURUSDWeek", EURUSDWeek, "EURUSDWeek");
