@@ -43,7 +43,6 @@ router.get("/PerYear", async(req, res) => {
 });
 
 router.post("/", async(req, res) => {
-    console.log("req: " + req.body.Annual_Change);
     const Year = new EURUSDModel({
         keyName: req.body.keyName,
         Date: req.body.Date,

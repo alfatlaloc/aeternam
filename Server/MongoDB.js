@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 //Set up default mongoose connection
-mongoose.connect("mongodb://localhost:27017/aeternam", { useNewUrlParser: true ,useUnifiedTopology: true });
+mongoose.connect(
+    "mongodb+srv://aeternam:master.ae13@eurusd.yhq8o.mongodb.net/EURUSD?retryWrites=true&w=majority", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
 //Get the default connection
 const db = mongoose.connection;
